@@ -12,7 +12,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Pretendard', sans-serif;
-      background: linear-gradient(to right, #f8f9fa, #eaf4f4);
+      background: linear-gradient(to right, #f0f4f8, #e6f2f2);
       color: #333;
       overflow: hidden;
     }
@@ -31,15 +31,20 @@
       background: #00bfa5;
       color: white;
       padding: 10px 15px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
       border: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: #009f8e;
     }
 
     .sidebar {
-      width: 220px;
+      width: 240px;
       background: white;
       padding: 30px 20px;
       border-right: 2px solid #ddd;
@@ -48,13 +53,16 @@
       flex-shrink: 0;
       position: sticky;
       top: 0;
-      transition: left 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
     }
 
     .sidebar h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
+      font-size: 20px;
+      margin-bottom: 20px;
       color: #00bfa5;
+      font-weight: 700;
     }
 
     .sidebar ul {
@@ -64,18 +72,21 @@
 
     .sidebar ul li a {
       display: block;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 5px;
+      padding: 12px 15px;
+      margin: 6px 0;
+      border-radius: 8px;
       text-decoration: none;
       color: #333;
-      transition: background 0.3s;
+      transition: all 0.2s ease;
+      font-weight: 500;
     }
 
-    .sidebar ul li a:hover, .sidebar ul li a.active {
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active {
       background: #00bfa5;
       color: white;
-      font-weight: bold;
+      font-weight: 600;
+      transform: translateX(5px);
     }
 
     .content {
@@ -84,48 +95,72 @@
       overflow-y: auto;
       height: 100vh;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     .section {
       background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
     }
 
     .section h2 {
       border-bottom: 3px solid #00bfa5;
       padding-bottom: 10px;
-      font-size: 22px;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
 
     .profile {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
 
     .highlight {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 30px;
+      font-weight: 700;
       color: #00bfa5;
     }
 
     .photo {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #ddd;
+      border: 4px solid #00bfa5;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .url-box {
       border: 1px solid #ccc;
-      padding: 10px;
-      background-color: #f0f0f0;
+      padding: 12px;
+      background-color: #f7f7f7;
       font-family: monospace;
-      border-radius: 5px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      transition: background 0.3s;
+    }
+
+    .url-box:hover {
+      background-color: #e0f7f5;
+    }
+
+    a {
+      color: #00796b;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -137,6 +172,7 @@
       }
       .sidebar.open {
         left: 0;
+        box-shadow: 4px 0 16px rgba(0,0,0,0.2);
       }
       .menu-toggle {
         display: block;
@@ -191,7 +227,7 @@
       <h2>경력</h2>
       <p><strong>졸업작품 프로젝트</strong> - With U 펀딩 사이트 / 프론트엔드 개발 (2025.03 ~ )</p>
       <p>∙ 요구사항 분석 및 전체적인 디자인</p>
-      <p>∙ TypeScript 기반으로 styled-components를 사용한 React </p>
+      <p>∙ TypeScript 기반으로 styled-components를 사용한 React</p>
       <p><strong>KBO 야구 정보 사이트</strong> - API를 활용한 야구 정보 사이트</p>
       <p>∙ TypeScript를 이용한 React</p>
       <p>∙ API를 이용한 사이트 구현</p>
@@ -254,3 +290,4 @@
   </script>
 </body>
 </html>
+
